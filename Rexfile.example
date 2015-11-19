@@ -1,0 +1,18 @@
+use Rex -feature => ['1.0'];
+use Rex::Ext::ParamLookup;
+
+include qw/
+  Rex::Rsyslog::Elastic
+  /;
+
+set connection => 'OpenSSH';
+user 'root';
+
+task "setup", make {
+
+  Rex::Rsyslog::Elastic::setup();
+  Rex::Rsyslog::Elastic::syslog(server=>"elastic1.db.xarlos.me");
+  Rex::Rsyslog::Elastic::nginx(server=>"elastic1.db.xarlos.me"); # Currently not implemented
+
+};
+

@@ -1,0 +1,6 @@
+Name: Rex::Rsyslog::Elastic
+Description: Installs rsyslog and adds modules for logging out to elasticsearch
+Author: xarlos <xarlos@xarlos.me>
+License: Apache 2.0
+Require:
+  - Rex::Ext::ParamLookup
